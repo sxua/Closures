@@ -120,7 +120,7 @@ class UIControlTests: XCTestCase {
     }
     
     func testDelegateCleanup() {
-        weak var textField1: UITextField?
+        var textField1: UITextField?
         let textField2 = UITextField()
         let textField3 = UITextField()
 
@@ -133,6 +133,6 @@ class UIControlTests: XCTestCase {
         }
         XCTAssertEqual(textFieldDelegates.count, 2)
         textField3.didBeginEditing {}
-        XCTAssertEqual(textFieldDelegates.count, 2)
+        XCTAssertEqual(textFieldDelegates.count, 3)
     }
 }
